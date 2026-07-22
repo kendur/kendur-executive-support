@@ -2,61 +2,43 @@
 
 ## Scope
 
-The **Executive Support System** is currently in a documentation-only phase. There is no application code, no running service, and no user data processed by this repository.
+The project is currently documentation-first. This policy will expand as templates, connectors, automation, and services are implemented.
 
-This policy will evolve as the project moves into implementation phases.
+## Reporting a vulnerability
 
----
+Do not open a public issue for a vulnerability, exposed credential, or sensitive-data leak.
 
-## Reporting a Vulnerability
+Use GitHub private vulnerability reporting when available, or contact the maintainer through the GitHub profile. Include:
 
-If you discover a security vulnerability in this project—including in any configuration files, automation scripts, or templates—please report it responsibly.
+- a description;
+- affected file, workflow, or release;
+- steps to reproduce where applicable;
+- potential impact;
+- suggested mitigation if known.
 
-**Do not open a public GitHub issue for security vulnerabilities.**
+The single maintainer will acknowledge and prioritize reports as availability permits. Public disclosure timing will be coordinated for valid issues where practical.
 
-Instead, report security issues via [GitHub's private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) for this repository, or contact the maintainer directly through their GitHub profile.
+## Data handling principles
 
-Please include:
+- The user controls their own workspace and connected services.
+- The manual community system does not require a central project-operated server.
+- Automation and AI are optional.
+- Connected providers process data under their own terms.
+- A future hosted service will document its own data flow, retention, and security controls before launch.
+- Personal and Work profiles are public product concepts; employer-specific data belongs only in private user configuration.
 
-- A description of the vulnerability
-- Steps to reproduce or demonstrate the issue
-- The potential impact
-- Any suggested mitigations (optional)
+## Contributions
 
-You can expect an acknowledgement within 72 hours. If the report is valid, a fix will be prioritised and a disclosure timeline agreed with the reporter where appropriate.
+Do not commit:
 
----
+- credentials, tokens, or secrets;
+- real personal data;
+- confidential employer or customer information;
+- private recordings or transcripts;
+- proprietary third-party material without permission.
 
-## Data Handling
+Use synthetic examples and the default Personal and Work profiles.
 
-This system is designed to handle personal and work-related information. The following principles apply:
+## Supported versions
 
-- The system owner controls their own data. No central server receives user data by default.
-- Automation adapters (n8n, Zapier, Make, etc.) are configured and operated by the user. Each adapter's data handling is governed by that provider's own terms.
-- AI integrations are optional. When used, data shared with AI services is governed by the relevant provider's privacy policy.
-- Notion is used as the primary interface. Notion's data handling is governed by Notion's terms of service.
-
-**This project does not operate any data collection infrastructure.** Users are responsible for the security of their own Notion workspace, automation accounts, and connected services.
-
----
-
-## Sensitive Information in Contributions
-
-Do not include in any contribution:
-
-- Real personal data (names, contact details, identifiers)
-- Credentials, API keys, tokens, or secrets of any kind
-- Confidential business information
-- Information from specific employers (use "Personal" and "Work" as context labels)
-
-Pull requests containing sensitive information will be rejected and the contributor asked to re-submit without it.
-
----
-
-## Supported Versions
-
-As the project has no versioned releases yet, all security reports should target the current state of the `main` branch.
-
----
-
-*This policy will be updated as the project moves from documentation into implementation.*
+Until versioned releases exist, reports should reference the current `main` branch or the specific commit involved.

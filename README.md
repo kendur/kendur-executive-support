@@ -32,7 +32,7 @@ This system is designed for people who:
 
 ## See the system at work
 
-The [founder thought-stream before-and-after example](docs/examples/founder-thought-stream-before-and-after.md) preserves a real, unedited audio transcription beside an example of AI-assisted processing. It shows how the system can extract intent, prioritize decisions, retain unfinished threads, and identify a next action without discarding the original thought.
+The [founder thought-stream before-and-after example](docs/examples/founder-thought-stream-before-and-after.md) preserves a real, unedited audio transcript beside an example of AI-assisted processing. It shows how the system can extract intent, prioritize decisions, retain unfinished threads, and identify a next action without discarding the original thought.
 
 ## Product model
 

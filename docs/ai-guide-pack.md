@@ -40,6 +40,18 @@ The guide should adapt its instructions:
 
 The user may change mode at any time.
 
+## Thought-stream processing example
+
+The [founder thought-stream before-and-after example](examples/founder-thought-stream-before-and-after.md) is a reference case for the Guide Pack. It shows the intended transformation from an unstructured audio transcript into:
+
+- a concise statement of intent;
+- no more than three prioritized decisions;
+- extracted requirements;
+- preserved unfinished threads;
+- one manageable next action.
+
+The source remains available beside the processed output. The guide must organize a capture without pretending its interpretation is the only valid one.
+
 ## Provider behavior
 
 The Guide Pack may be used with Notion AI, ChatGPT, Claude, compatible local models, or future providers. It must state which functions require browsing, file access, Notion access, or external tools and offer a manual alternative when those capabilities are unavailable.

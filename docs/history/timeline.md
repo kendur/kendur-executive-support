@@ -13,4 +13,4 @@ Significant events are appended. Corrections are added as new entries rather tha
 | 2026-07-22 | Capture-source-agnostic strategy adopted: vendors capture and transcribe; the product owns normalized ingestion and action support. |
 | 2026-07-22 | Public GitHub repository created and PR #1 established the documentation foundation using GitHub Copilot Coding Agent. |
 | 2026-07-22 | Issue #2 opened to align the foundation with the decisions made after the original repository prompt. |
-| 2026-07-22 | A verbatim founder audio transcription and its organized interpretation were preserved as the first public before-and-after thought-stream example. |
+| 2026-07-22 | A verbatim founder audio transcript and its organized interpretation were preserved as the first public before-and-after thought-stream example. |

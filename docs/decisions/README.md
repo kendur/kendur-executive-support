@@ -1,62 +1,35 @@
 # Architecture Decision Records
 
-This folder contains Architecture Decision Records (ADRs) for the Executive Support System.
+ADRs preserve significant decisions, their context, alternatives, and consequences. Accepted ADRs are not rewritten when direction changes; a new ADR supersedes the earlier record.
 
----
+## Status values
 
-## What Is an ADR?
+- Proposed
+- Accepted
+- Rejected
+- Superseded by ADR-NNNN
 
-An Architecture Decision Record documents a significant decision made about the structure, design, or direction of the system. Each ADR captures:
+## Index
 
-- The context in which the decision was made
-- The options that were considered
-- The decision that was made
-- The reasoning behind it
-- The consequences of the decision
+| ADR | Decision | Status |
+|---|---|---|
+| [ADR-0001](ADR-0001-notion-centered-ai-optional.md) | Notion-centered, AI-optional core | Accepted |
+| [ADR-0002](ADR-0002-personal-work-profiles.md) | Personal and Work profiles | Accepted |
+| [ADR-0003](ADR-0003-open-community-paid-services.md) | Open community core and paid services | Accepted |
+| [ADR-0004](ADR-0004-capture-source-agnostic.md) | Capture-source-agnostic design | Accepted |
 
-ADRs are immutable once accepted. If a decision changes, a new ADR is created that supersedes the old one. This preserves the history of why decisions were made.
-
----
-
-## ADR Template
-
-When creating a new ADR, use this structure:
+## New ADR format
 
 ```markdown
-# ADR-NNN: [Short Title]
+# ADR-NNNN: Title
 
 **Date:** YYYY-MM-DD
-**Status:** Proposed | Accepted | Superseded by ADR-NNN
+**Status:** Proposed | Accepted | Rejected | Superseded by ADR-NNNN
 
 ## Context
-
-[What is the situation or problem that requires a decision?]
-
-## Options Considered
-
-- Option A: [description]
-- Option B: [description]
-- Option C: [description]
-
 ## Decision
-
-[What was decided?]
-
-## Reasoning
-
-[Why was this decision made over the alternatives?]
-
+## Alternatives considered
 ## Consequences
-
-[What are the trade-offs or downstream effects of this decision?]
 ```
 
----
-
-## Proposing a New ADR
-
-Open a pull request with the new ADR file named `ADR-NNN-short-title.md` where NNN is the next sequential number. See [CONTRIBUTING.md](../../CONTRIBUTING.md).
-
----
-
-*No ADRs have been recorded yet. This folder is a placeholder.*
+Propose consequential changes through an issue and pull request. Link the superseding ADR rather than editing accepted history.

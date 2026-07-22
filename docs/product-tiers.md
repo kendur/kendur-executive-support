@@ -1,73 +1,86 @@
 # Product Tiers
 
-This document defines the intended product structure for the Executive Support System, including the community edition and any future paid tier.
+## Guiding principle
 
----
+The complete manual Notion system should remain free and openly licensed. Paid offerings provide reduced setup, maintenance, hosting, testing, intelligence, and support rather than withholding the core workflow.
 
-## Guiding Principle
+## Community
 
-The core system—the manual Notion workspace, documentation, and design—will always be available free of charge as a community edition. Monetisation, if it happens, will be through value-added services and support, not by gating the fundamental workflow.
+**Free.**
 
----
+Includes:
 
-## Community Edition
+- the complete manual Notion template;
+- core documentation;
+- manual capture, clarification, planning, review, and recovery workflows;
+- connector contracts and configuration references;
+- the AI Guide Pack;
+- public updates and migration notes while the project is maintained;
+- community issues and discussions.
 
-**Free, always.**
+Users may operate the system without AI or an ongoing subscription. They may fork, modify, redistribute, and publish derivatives under the final attribution terms.
 
-The community edition includes everything needed to run the Executive Support System without paying anything.
+## Connect
 
-| Component | Included |
-|---|---|
-| Full documentation (this repository) | ✓ |
-| Notion workspace template | ✓ |
-| Manual workflow documentation | ✓ |
-| Automation adapter documentation | ✓ |
-| AI integration documentation | ✓ |
-| Architecture Decision Records | ✓ |
-| Community support (GitHub issues/discussions) | ✓ |
+**Future recurring automation service.**
 
-The community edition assumes the user is comfortable setting up their own Notion workspace, connecting their own automation accounts, and configuring their own AI integrations.
+May include:
 
-**What the community edition does not include:**
+- hosted capture routing;
+- supported recorder and transcript connectors;
+- calendar synchronization;
+- scheduled briefs;
+- monitored workflows, retries, and error handling;
+- tested migration support.
 
-- Pre-configured automation workflows (the user builds their own from documentation)
-- Setup assistance or personal support
-- Any hosted service
-- Guaranteed update frequency
+Users may self-host or configure equivalent automations instead.
 
----
+## Guide
 
-## Potential Paid Tier *(not yet defined)*
+**Future optional intelligence and support service.**
 
-A paid tier may be introduced in the future. It is not defined yet. These are the kinds of things it might include:
+May include:
 
-- **Pre-built automation packs** — ready-to-import workflows for n8n, Zapier, Make, or Tasker, tested and maintained by the project
-- **Extended Notion template** — a more fully configured workspace with additional views, automations, and integrations
-- **Setup guide or onboarding** — a structured walkthrough for getting the system running
-- **Personal support** — direct access to the maintainer for questions and customisation help
-- **Early access** — new features, templates, or integrations before community release
+- provider selection or managed model routing;
+- action extraction and clarification support;
+- next-action and restart-cue suggestions;
+- adaptive review assistance;
+- skill-level-aware onboarding;
+- higher-touch support.
 
-The paid tier will never lock features that are part of the core community workflow. Users who switch from paid to community should not lose access to core functionality.
+AI remains optional. Users retain a complete non-AI path.
 
----
+## Concierge
 
-## Licensing
+**Future managed setup and customization service.**
 
-No license has been assigned to this project yet. When licenses are chosen, code and content will be licensed separately. The community edition will be clearly identified and its license will permit free use.
+May include personal onboarding, migration, integration setup, configuration, troubleshooting, and maintained compatibility.
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) and [SECURITY.md](../SECURITY.md) for current policies.
+## Platform
 
----
+A separate future track for developers, consultants, and solution builders may include APIs, SDKs, connector specifications, test fixtures, advanced self-hosting, implementation-partner licensing, or embedded use.
 
-## Open Questions
+## Enterprise
 
-- What is the right price point for a paid tier?
-- Should paid tiers be one-time or subscription?
-- Is there a value in an "individual supporter" tier with no additional features, for people who want to support the project?
-- Should the Notion template be published on the Notion template gallery?
+Enterprise is distinct from ordinary membership and from developer access. It may later require organization administration, identity controls, deployment options, procurement, support agreements, and service commitments. It is outside the first release.
 
-These questions will be answered as the project matures.
+## Open community model
 
----
+The official project will maintain a tested distribution and canonical source. Community forks may use distinct names and should:
 
-*This document is a placeholder. Tier definitions will be formalised before any paid features are introduced.*
+- credit the original project and creator;
+- link to the canonical source;
+- identify material changes;
+- avoid claiming official, certified, supported, or tested status without permission.
+
+## Planned licensing
+
+Pending final review:
+
+- **CC BY 4.0** for the template, prompts, documentation, diagrams, and research;
+- **Apache License 2.0** for software, connectors, scripts, and backend services;
+- a separate branding policy for the official name, logo, and tested-release designation.
+
+## Product boundary
+
+A public repository does not require every paid operational asset to be stored publicly. Hosted infrastructure, managed deployment, support systems, monitoring, commercial design assets, and service operations may remain separate while the community system stays open.

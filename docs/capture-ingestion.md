@@ -1,123 +1,133 @@
 # Capture and Ingestion
 
-This document describes how information enters the Executive Support System—the capture layer.
-
----
-
 ## Principle
 
-**Capture must be fast and tolerate incomplete thoughts.**
+**Capture must be fast, source-agnostic, and tolerant of incomplete thought.**
 
-A half-formed idea captured is more valuable than a perfect idea forgotten. The system must never punish a user for capturing something imperfect, ambiguous, or unresolved.
+The system accepts fragments first and separates capture from later clarification.
 
----
+## Universal inbox
 
-## The Inbox
+All capture routes feed one logical Inbox. A user may have several devices or services, but should not have to review several independent capture queues.
 
-All captured items land in a single **Inbox** in Notion. The Inbox is the system's entry point regardless of capture source.
+An Inbox item is source material. It may later become an action, project, decision, waiting-for item, reference, or intentional discard.
 
-Items in the Inbox are unprocessed. They carry a source tag, a timestamp, and whatever content was provided. They are not yet actions, projects, or reference material. Triage is a separate, deliberate activity that happens later.
+## Supported source classes
 
----
+A source does not need to produce text before ingestion. The system may accept:
 
-## Capture Sources
+- manual text or a short fragment;
+- a spoken thought stream;
+- raw audio;
+- a vendor transcript or summary;
+- meeting notes;
+- email;
+- a link or web clip;
+- an image or screenshot;
+- a PDF, document, spreadsheet, or other file;
+- a calendar event;
+- an automation payload;
+- a future source that can map into the canonical capture contract.
 
-The system is capture-source-agnostic. Any source that can produce text can feed the Inbox. No specific source is required.
+Specialized products such as PLAUD, Fieldy, Pocket, Omi, Bee, and future devices are optional adapters. A phone, browser, or manual form remains sufficient.
 
-### Manual Entry
+## Thought-stream capture
 
-The simplest source. The user creates a new Inbox item directly in Notion.
+Rapid associative thought is a first-class capture pattern. A user may speak in fragments, change direction, interrupt themselves, or lose a thought mid-sentence.
 
-**When to use:** When near a computer or phone with the Notion app, and the item can be typed quickly.
+The source stream should be preserved. Optional processing may:
 
-### Voice Recording and Transcription
+- identify likely idea boundaries;
+- preserve unfinished threads;
+- extract possible commitments or decisions;
+- avoid converting every sentence into a task;
+- present fragments later for clarification.
 
-A voice recorder (phone voice memo, PLAUD, Omi, Fieldy, or any device) captures audio. The audio is transcribed (manually or automatically) and the transcript is added to the Inbox.
-
-**When to use:** When typing is impractical—walking, driving, or when speaking is faster than writing.
-
-The transcript is stored as the item content. The source tag indicates it came from voice. The provenance field records which device or session, if known.
-
-### Email
-
-An email is forwarded or automatically routed to the Inbox. The email subject becomes the item title; the body (or a summary) becomes the content.
-
-**When to use:** When an email represents an obligation, decision, or item that needs tracking outside of email.
-
-### Meeting Notes and Transcripts
-
-Notes or a transcript from a meeting are added to the Inbox as a single item or as a batch of items. The meeting name and date serve as provenance.
-
-**When to use:** After any meeting where commitments were made, questions arose, or decisions were deferred.
-
-### Read-Later and Saved Articles
-
-Links and articles saved in a read-later service (Pocket or equivalent) can be routed to the Inbox for triage into Reference or Action.
-
-**When to use:** When a saved article contains something that needs to be acted on, not just read.
-
-### Files and Documents
-
-Uploaded files, PDFs, or attached documents can be linked to an Inbox item for later processing.
-
-**When to use:** When a document contains obligations or decisions that need tracking.
-
-### Automation-Routed Items
-
-Items routed automatically by an automation adapter (n8n, Zapier, Make, Tasker, or other). The adapter creates an Inbox item via the Notion API.
-
-**When to use:** Whenever a source can be reliably automated and the volume justifies it.
-
----
-
-## Required Fields for Every Inbox Item
+## Required capture fields
 
 | Field | Description | Required |
 |---|---|---|
-| Title | A short label for the item—can be a fragment | Yes |
-| Content | The raw captured text, transcript, or note | No |
-| Source | How it arrived (voice, email, meeting, manual, automation) | Yes |
-| Provenance | Where it came from (meeting name, person, project) | Recommended |
-| Captured at | Timestamp | Yes (auto) |
-| Status | Always "Inbox" on creation | Yes (auto) |
-| Context | Personal or Work | Recommended |
+| `capture_id` | Stable internal identifier | Yes |
+| `title` | Short label; may be generated from a fragment | Yes |
+| `raw_content` | Original text, transcript, or note | No |
+| `source_type` | Manual, voice, audio, email, meeting, web, file, automation, or other | Yes |
+| `source_provider` | Vendor or application when known | No |
+| `source_reference` | Link or external record ID | No |
+| `captured_at` | Source timestamp | Yes |
+| `profile` | Personal, Work, or Unknown | Recommended |
+| `status` | Captured on creation | Yes |
+| `attachments` | Files, audio, images, or links | No |
 
-Items that arrive without full provenance are still valid. The restart cue and provenance can be added during triage.
+Incomplete provenance remains acceptable. Clarification may add it later.
 
----
+## Profile handling
 
-## Capture Quality Levels
+The public field is **Profile**, with default values:
 
-Captured items arrive at different levels of completeness. All are acceptable:
+- Personal
+- Work
+- Unknown
 
-| Level | Description | Example |
-|---|---|---|
-| Fragment | A few words or a title only | "Follow up with Alex" |
-| Note | A sentence or short paragraph | "Alex mentioned budget approval is blocked on Finance sign-off" |
-| Raw | An unedited transcript or forwarded email | A 10-minute voice memo transcript |
-| Structured | A well-described item with context | "Meeting with Alex re Q3 budget — decision needed on Finance approval path before Friday" |
+Employer names belong in private configuration, not in public template fields or examples.
 
-The system handles all four. The triage step converts fragments and raw content into structured items.
+## Conversation records
 
----
+Recorded conversations should preserve:
 
-## What Happens Next
+- source device or service;
+- start and end time;
+- transcript and timestamped segments when available;
+- speaker labels;
+- vendor summary and action suggestions;
+- original audio reference;
+- related meeting or project;
+- Personal or Work profile;
+- processing and review status.
 
-Items sit in the Inbox until triaged. Triage is described in the workflow documentation (to be written in Phase 1).
+Derived records should link back to the source conversation rather than replacing it.
 
-The Inbox should be reviewed regularly—at minimum once per day during active use. Items in the Inbox do not represent actions yet.
+Possible extracted classifications include:
 
----
+- explicit commitment;
+- assigned action;
+- possible action;
+- decision;
+- waiting for;
+- reference;
+- unfinished thread;
+- unclear.
 
-## Automation Adapter Interface
+## Canonical adapter contract
 
-When an adapter (n8n, Zapier, Make, or other) creates an Inbox item, it should provide:
+Adapters normalize a source into a provider-neutral capture object. A simplified example:
 
-- **title** — string, required
-- **content** — string, optional
-- **source** — one of: `voice`, `email`, `meeting`, `web`, `file`, `automation`, `manual`
-- **provenance** — string, optional
-- **context** — one of: `Personal`, `Work`, `Unknown`
-- **captured_at** — ISO 8601 timestamp, optional (defaults to now)
+```json
+{
+  "schema_version": "1.0",
+  "capture_id": "uuid",
+  "source_type": "conversation",
+  "source_provider": "provider-name",
+  "source_reference": "external-id-or-url",
+  "captured_at": "2026-07-22T08:00:00-04:00",
+  "profile": "Work",
+  "title": "Short capture title",
+  "raw_content": "Original text or transcript",
+  "attachments": []
+}
+```
 
-The adapter is responsible for transforming its source format into this schema. The Notion API call is the boundary between the adapter and the system.
+The adapter may be implemented in n8n, Zapier, Make, Tasker, a vendor API, email, a monitored folder, or a future first-party service. The contract remains stable when the implementation changes.
+
+## Clarification
+
+Capture does not require a project, priority, due date, task breakdown, or complete wording. Clarification later determines:
+
+- what the item means;
+- whether action exists;
+- the desired outcome;
+- the next visible action;
+- the appropriate profile and project;
+- any due date or scheduled work;
+- what evidence or context should remain attached.
+
+The interface must make this workflow understandable without external instructions.

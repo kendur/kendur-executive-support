@@ -1,6 +1,6 @@
 # Founder Thought Stream: Before and After
 
-This is a real audio transcription from the development of the Executive Support System. It demonstrates the intended workflow:
+This is a real, verbatim audio transcript from the development of the Executive Support System. It demonstrates the intended workflow:
 
 1. capture the thought without requiring organization;
 2. preserve the source exactly;

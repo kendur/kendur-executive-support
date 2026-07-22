@@ -41,6 +41,6 @@ The project adopted two durable positions:
 
 ## Primary-source example
 
-The [founder thought-stream before-and-after example](../examples/founder-thought-stream-before-and-after.md) preserves a real audio transcription from the development discussion beside an AI-assisted organized interpretation. It demonstrates the product’s intended behavior using the project’s own origin material: preserve the raw thought, extract structure, retain unfinished threads, and identify a manageable next action.
+The [founder thought-stream before-and-after example](../examples/founder-thought-stream-before-and-after.md) preserves a real audio transcript from the development discussion beside an AI-assisted organized interpretation. It demonstrates the product’s intended behavior using the project’s own origin material: preserve the raw thought, extract structure, retain unfinished threads, and identify a manageable next action.
 
 This record preserves the context behind the foundational ADRs.

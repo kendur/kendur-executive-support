@@ -30,6 +30,10 @@ This system is designed for people who:
 - may have little technical experience;
 - want the option to add automation or AI without being required to do so.
 
+## See the system at work
+
+The [founder thought-stream before-and-after example](docs/examples/founder-thought-stream-before-and-after.md) preserves a real, unedited audio transcript beside an example of AI-assisted processing. It shows how the system can extract intent, prioritize decisions, retain unfinished threads, and identify a next action without discarding the original thought.
+
 ## Product model
 
 The complete manual community system is intended to remain free and openly licensed. Users may duplicate, modify, fork, and redistribute it under the published attribution terms.
@@ -69,6 +73,7 @@ docs/
   capture-ingestion.md
   ai-guide-pack.md
   product-tiers.md
+  examples/
   history/
   research/
   decisions/

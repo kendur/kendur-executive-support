@@ -39,4 +39,8 @@ The project adopted two durable positions:
 1. Community users may fork, modify, redistribute, and publish the system under attribution terms while official tested releases remain distinguishable.
 2. Capture hardware and services are replaceable sources. The product owns normalization, context, clarification, action, scheduling, and recovery rather than depending on one recorder or AI provider.
 
+## Primary-source example
+
+The [founder thought-stream before-and-after example](../examples/founder-thought-stream-before-and-after.md) preserves a real audio transcript from the development discussion beside an AI-assisted organized interpretation. It demonstrates the product’s intended behavior using the project’s own origin material: preserve the raw thought, extract structure, retain unfinished threads, and identify a manageable next action.
+
 This record preserves the context behind the foundational ADRs.

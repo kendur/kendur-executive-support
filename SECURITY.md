@@ -23,7 +23,8 @@ Please include:
 - The potential impact
 - Any suggested mitigations (optional)
 
-You can expect an acknowledgement within 72 hours. If the report is valid, a fix will be prioritised and a disclosure timeline agreed with the reporter where appropriate.
+The maintainer will acknowledge valid reports as promptly as practical for a single-maintainer project. If the
+report is valid, a fix will be prioritised and a disclosure timeline agreed with the reporter where appropriate.
 
 ---
 
@@ -47,7 +48,7 @@ Do not include in any contribution:
 - Real personal data (names, contact details, identifiers)
 - Credentials, API keys, tokens, or secrets of any kind
 - Confidential business information
-- Information from specific employers (use "Personal" and "Work" as context labels)
+- Information from specific employers (use "Personal" and "Work" as profile labels)
 
 Pull requests containing sensitive information will be rejected and the contributor asked to re-submit without it.
 

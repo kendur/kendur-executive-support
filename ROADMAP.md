@@ -15,9 +15,10 @@ This roadmap reflects current priorities for the **Executive Support System** *(
 - [x] Architecture principles
 - [x] Capture ingestion design
 - [x] Product tier definitions
+- [x] Project history and timeline
 - [x] CONTRIBUTING, AI_USAGE, SECURITY, CHANGELOG
 - [x] GitHub issue templates and pull request template
-- [ ] First Architecture Decision Records (ADRs) for key early choices
+- [x] First Architecture Decision Records (ADRs) for key early choices
 - [ ] Research notes on comparable systems
 - [ ] Glossary of project-specific terms
 
@@ -30,6 +31,7 @@ This roadmap reflects current priorities for the **Executive Support System** *(
 - [ ] Define Notion database schema (Inbox, Actions, Projects, Reference, Archive)
 - [ ] Define Personal and Work profile structures
 - [ ] Build and document the manual triage workflow
+- [ ] Ensure the core template is understandable without tutorials or reference docs
 - [ ] Define source and provenance tagging convention
 - [ ] Document the unified view pattern (Personal + Work in a single dashboard)
 - [ ] Test and refine with real daily use
@@ -58,6 +60,7 @@ This roadmap reflects current priorities for the **Executive Support System** *(
 **Goal:** Add AI-assisted processing as an optional layer on top of the working manual system.
 
 - [ ] Define AI enhancement interface (provider-agnostic)
+- [ ] Draft a provider-agnostic AI Guide Pack for setup and ongoing assistance
 - [ ] Transcript summarisation and action extraction
 - [ ] Suggested routing (Inbox → Project or Action)
 - [ ] Restart cue generation
@@ -68,12 +71,12 @@ This roadmap reflects current priorities for the **Executive Support System** *(
 
 ## Phase 4 — Product and Community
 
-**Goal:** Formalise the community edition and define any paid tier.
+**Goal:** Formalise the open community edition and define paid service paths around it.
 
-- [ ] Finalise license for code (community edition)
-- [ ] Finalise license for content and documentation
+- [ ] Finalise Apache 2.0 license for software
+- [ ] Finalise CC BY 4.0 license for template/content material
 - [ ] Publish community Notion template
-- [ ] Define paid tier features (see [docs/product-tiers.md](docs/product-tiers.md))
+- [ ] Define hosted automation, managed support, and later Platform/Enterprise offers
 - [ ] Set up community discussion space
 - [ ] Contribution guidelines mature enough for external contributors
 
@@ -83,7 +86,7 @@ This roadmap reflects current priorities for the **Executive Support System** *(
 
 - Integration with the broader **Nexus** personal operating system (working title)
 - Native mobile capture companion
-- Self-hosted backend option
+- First-party backend that can replace third-party automation tools when justified
 - Multi-user household or small-team support
 
 ---

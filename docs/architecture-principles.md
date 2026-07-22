@@ -32,23 +32,30 @@ These three activities happen at different times and in different mental states.
 
 ---
 
-## 4. Context, source provenance, and restart cues are first-class data
+## 4. Profile, source provenance, and restart cues are first-class data
 
 Every captured item should record:
 
+- **Profile** — whether it belongs to Personal, Work, or another explicitly defined profile
 - **Source** — how it arrived (voice note, email, meeting, manual entry, etc.)
 - **Provenance** — where it came from (which meeting, which person, which project)
-- **Restart cue** — enough context to re-engage without reading everything (a short summary, a key question, or the last decision made)
+- **Restart cue** — enough context to re-engage without reading everything (a short summary, a key question,
+  or the last decision made)
 
-**Implication:** The Notion schema must include fields for source, provenance, and restart cues. These are not optional.
+Situational context remains useful, but it is distinct from the top-level Personal/Work profile choice.
+
+**Implication:** The Notion schema must include fields for profile, source, provenance, and restart cues.
+These are not optional.
 
 ---
 
-## 5. Personal and Work contexts are separate
+## 5. Personal and Work are the default top-level profiles
 
-Items, projects, and actions are tagged as Personal or Work. The two contexts do not share databases, though they can appear together in a unified view.
+Items, projects, and actions are tagged as Personal or Work. The two profiles do not need to share databases,
+though they can appear together in a unified view.
 
-**Implication:** Design for two parallel workspaces or clearly separated sections within one workspace. Never mix unlabelled items.
+**Implication:** Design for two parallel workspaces or clearly separated sections within one workspace. Never
+mix unlabelled items.
 
 ---
 
@@ -56,13 +63,19 @@ Items, projects, and actions are tagged as Personal or Work. The two contexts do
 
 Avoid deep nesting of projects, tasks, or pages. One level of project context above an action is usually sufficient. Deep nesting creates navigation debt and orphaned items.
 
-**Implication:** Limit nesting to: Context (Personal/Work) → Project → Action. Sub-tasks are acceptable but not sub-sub-tasks.
+**Implication:** Limit nesting to: Profile (Personal/Work) → Project → Action. Sub-tasks are acceptable but
+not sub-sub-tasks.
 
 ---
 
 ## 7. Adapters are replaceable
 
-Any tool used for automation (n8n, Zapier, Make, Tasker) or AI (any LLM or AI service) must be replaceable without redesigning the core system. The interface between the adapter and Notion is the contract; the adapter itself is an implementation detail.
+Any tool used for automation (n8n, Zapier, Make, Tasker) or AI (any LLM or AI service) must be replaceable
+without redesigning the core system. The interface between the adapter and Notion is the contract; the
+adapter itself is an implementation detail.
+
+A first-party backend remains an allowed future implementation if it becomes the best way to satisfy the same
+contract.
 
 **Implication:** Document the expected input and output format for each integration point. Do not hard-code assumptions about a specific provider.
 

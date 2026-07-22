@@ -59,4 +59,8 @@ Open a pull request with the new ADR file named `ADR-NNN-short-title.md` where N
 
 ---
 
-*No ADRs have been recorded yet. This folder is a placeholder.*
+## Current ADRs
+
+- [ADR-001: Notion-first manual core](ADR-001-notion-first-manual-core.md)
+- [ADR-002: Open community edition with service-based paid path](ADR-002-open-community-and-service-path.md)
+- [ADR-003: Capture-source-agnostic adapters and future first-party backend](ADR-003-adapters-and-future-backend.md)

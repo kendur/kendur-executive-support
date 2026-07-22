@@ -43,14 +43,23 @@ No specific AI provider, LLM, or AI service is assumed, required, or endorsed by
 
 The system is designed so that any compatible AI service can be connected as an adapter. Provider-specific integrations are documented as optional adapters, not core components.
 
+An optional provider-agnostic **AI Guide Pack** may be developed for setup help and ongoing assistance at
+different user skill levels. The guide pack is additive; the core template must still remain understandable
+without it.
+
 ---
 
-## What AI Will Not Do in This System
+## AI autonomy boundaries
 
-- AI will not make decisions on behalf of the user.
-- AI will not modify or delete captured items without explicit user action.
-- AI will not be given access to data that the user has not explicitly shared with it.
-- AI output will always be presented as a suggestion, not a conclusion.
+AI assistance follows graduated autonomy:
+
+| Level | Default? | Boundary |
+|---|---|---|
+| Suggestions | Yes | AI may summarise, extract, route, or draft recommendations for human review. |
+| Routine reversible actions | Optional | Automation may be enabled for low-risk, reversible tasks when the user explicitly turns it on. |
+| Consequential actions | No | Anything with durable, external, financial, reputational, or deletion impact requires explicit approval. |
+
+AI is never a substitute for user judgment. It only operates on information the user has chosen to share.
 
 ---
 
@@ -60,7 +69,7 @@ Significant use of AI tools in producing project documentation or design artefac
 
 | Date | Description |
 |---|---|
-| *(none yet)* | |
+| 2026-07-22 | GitHub Copilot drafted the initial documentation pull request (#1); the maintainer reviewed and edited the result before merge. |
 
 ---
 

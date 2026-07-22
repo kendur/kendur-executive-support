@@ -10,6 +10,9 @@ This document describes how information enters the Executive Support System—th
 
 A half-formed idea captured is more valuable than a perfect idea forgotten. The system must never punish a user for capturing something imperfect, ambiguous, or unresolved.
 
+Capture is source-agnostic: raw audio, files, transcripts, email, manual entry, automation, and future
+sources should all be able to reach the same Inbox.
+
 ---
 
 ## The Inbox
@@ -32,7 +35,8 @@ The simplest source. The user creates a new Inbox item directly in Notion.
 
 ### Voice Recording and Transcription
 
-A voice recorder (phone voice memo, PLAUD, Omi, Fieldy, or any device) captures audio. The audio is transcribed (manually or automatically) and the transcript is added to the Inbox.
+A voice recorder (phone voice memo, PLAUD, Omi, Fieldy, or any device) captures audio. Raw audio may be
+stored first, then transcribed manually or automatically, with the transcript added or linked later.
 
 **When to use:** When typing is impractical—walking, driving, or when speaking is faster than writing.
 
@@ -58,7 +62,8 @@ Links and articles saved in a read-later service (Pocket or equivalent) can be r
 
 ### Files and Documents
 
-Uploaded files, PDFs, or attached documents can be linked to an Inbox item for later processing.
+Uploaded files, PDFs, attached documents, or transcript files can be linked to an Inbox item for later
+processing.
 
 **When to use:** When a document contains obligations or decisions that need tracking.
 
@@ -80,9 +85,11 @@ Items routed automatically by an automation adapter (n8n, Zapier, Make, Tasker, 
 | Provenance | Where it came from (meeting name, person, project) | Recommended |
 | Captured at | Timestamp | Yes (auto) |
 | Status | Always "Inbox" on creation | Yes (auto) |
-| Context | Personal or Work | Recommended |
+| Profile | Personal, Work, or Unknown | Recommended |
+| Task context | Situational detail needed to resume or route the item | Optional |
 
-Items that arrive without full provenance are still valid. The restart cue and provenance can be added during triage.
+Items that arrive without full provenance are still valid. The restart cue, task context, and provenance can
+be added during triage.
 
 ---
 
@@ -117,7 +124,8 @@ When an adapter (n8n, Zapier, Make, or other) creates an Inbox item, it should p
 - **content** — string, optional
 - **source** — one of: `voice`, `email`, `meeting`, `web`, `file`, `automation`, `manual`
 - **provenance** — string, optional
-- **context** — one of: `Personal`, `Work`, `Unknown`
+- **profile** — one of: `Personal`, `Work`, `Unknown`
+- **task_context** — string, optional
 - **captured_at** — ISO 8601 timestamp, optional (defaults to now)
 
 The adapter is responsible for transforming its source format into this schema. The Notion API call is the boundary between the adapter and the system.

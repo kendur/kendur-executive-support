@@ -19,10 +19,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) conv
 - docs/architecture-principles.md — structural design decisions
 - docs/capture-ingestion.md — how information enters the system
 - docs/product-tiers.md — community and paid tier definitions
+- docs/history-and-timeline.md — project origin and timeline
 - docs/research/ directory for background research notes
 - docs/decisions/ directory for Architecture Decision Records (ADRs)
+- Initial accepted ADRs for the foundational architecture and product model
 - .github/ISSUE_TEMPLATE/ with bug report and feature request templates
 - .github/pull_request_template.md
+
+### Changed
+- Core documentation now uses Personal and Work as profiles, reserves context for situational detail, and
+  emphasises zero-reference usability for the core template
+- Product model documentation now reflects the free, forkable Community edition, planned license split, and
+  future hosted/service paths
+- AI usage and security policies now reflect documented AI assistance, graduated autonomy, and single-maintainer
+  response expectations
 
 ---
 

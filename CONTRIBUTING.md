@@ -60,8 +60,8 @@ For significant changes, please open an issue first to discuss the proposal befo
 - Use sentence case for headings.
 - Keep lines reasonably short (soft limit: 120 characters).
 - Prefer short paragraphs over long walls of text.
-- Do not use the employer name "SIA" anywhere. Use "Personal" and "Work."
-- Do not make clinical, medical, or wellness claims.
+- Use "Personal" and "Work" as the default public profile names.
+- Do not make diagnostic, treatment, or therapeutic claims.
 - Do not assume a specific AI provider, LLM, automation platform, or recorder.
 
 ### Architecture Decision Records (ADRs)
@@ -86,4 +86,7 @@ There is no formal code of conduct document yet. If one is needed, it will be ad
 
 ## No License Yet
 
-Until a license is formally assigned, all rights remain with the repository owner. Contributing to this repository implies agreement that your contributions may be included under whatever license is eventually chosen.
+The planned split, pending final review, is CC BY 4.0 for template/content material and Apache 2.0 for
+software. Until licenses are formally assigned, all rights remain with the repository owner. Contributing to
+this repository implies agreement that your contributions may be included under whatever license is eventually
+chosen.

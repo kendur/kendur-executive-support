@@ -1,73 +1,62 @@
 # Product Tiers
 
-This document defines the intended product structure for the Executive Support System, including the community edition and any future paid tier.
+This document defines the intended product structure for the Executive Support System.
 
 ---
 
 ## Guiding Principle
 
-The core system—the manual Notion workspace, documentation, and design—will always be available free of charge as a community edition. Monetisation, if it happens, will be through value-added services and support, not by gating the fundamental workflow.
+The core system remains available as a free Community edition. Revenue, if introduced, comes from hosted
+automation, support, or other value-added services rather than gating the fundamental workflow.
 
 ---
 
-## Community Edition
+## Community edition
 
-**Free, always.**
+The Community edition is intended to be:
 
-The community edition includes everything needed to run the Executive Support System without paying anything.
+- Free to use
+- Openly licensed
+- Forkable
+- Updated publicly for the lifetime of the project while it is actively maintained
 
-| Component | Included |
-|---|---|
-| Full documentation (this repository) | ✓ |
-| Notion workspace template | ✓ |
-| Manual workflow documentation | ✓ |
-| Automation adapter documentation | ✓ |
-| AI integration documentation | ✓ |
-| Architecture Decision Records | ✓ |
-| Community support (GitHub issues/discussions) | ✓ |
+As components become available, the Community edition is the public baseline for documentation, templates,
+manual workflows, adapter specifications, and accepted ADRs.
 
-The community edition assumes the user is comfortable setting up their own Notion workspace, connecting their own automation accounts, and configuring their own AI integrations.
-
-**What the community edition does not include:**
-
-- Pre-configured automation workflows (the user builds their own from documentation)
-- Setup assistance or personal support
-- Any hosted service
-- Guaranteed update frequency
+The core template must be understandable without tutorials or reference docs. An optional provider-agnostic
+AI Guide Pack may later help with setup and ongoing assistance at different user skill levels, but it is not
+required to use the core system.
 
 ---
 
-## Potential Paid Tier *(not yet defined)*
+## Derivatives and official status
 
-A paid tier may be introduced in the future. It is not defined yet. These are the kinds of things it might include:
+Derivatives are permitted under the published licenses, but they must preserve attribution and link back to
+the canonical source repository.
 
-- **Pre-built automation packs** — ready-to-import workflows for n8n, Zapier, Make, or Tasker, tested and maintained by the project
-- **Extended Notion template** — a more fully configured workspace with additional views, automations, and integrations
-- **Setup guide or onboarding** — a structured walkthrough for getting the system running
-- **Personal support** — direct access to the maintainer for questions and customisation help
-- **Early access** — new features, templates, or integrations before community release
-
-The paid tier will never lock features that are part of the core community workflow. Users who switch from paid to community should not lose access to core functionality.
+Forkable does not mean official. Project branding, "official" status, and any claim that a release is tested
+or maintainer-supported remain distinct and may be reserved for first-party releases.
 
 ---
 
-## Licensing
+## Service path beyond Community
 
-No license has been assigned to this project yet. When licenses are chosen, code and content will be licensed separately. The community edition will be clearly identified and its license will permit free use.
+Any paid offering should extend the Community edition rather than replace it. Likely paths include:
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) and [SECURITY.md](../SECURITY.md) for current policies.
+- Hosted automation for people who do not want to self-run n8n, Zapier, Make, or equivalent tooling
+- Optional managed intelligence/support, including onboarding or ongoing help
+- Later Platform or Enterprise tracks if the architecture justifies them
 
----
-
-## Open Questions
-
-- What is the right price point for a paid tier?
-- Should paid tiers be one-time or subscription?
-- Is there a value in an "individual supporter" tier with no additional features, for people who want to support the project?
-- Should the Notion template be published on the Notion template gallery?
-
-These questions will be answered as the project matures.
+A first-party backend remains in scope as a future replacement for third-party automation tools if that
+improves reliability, portability, or product coherence.
 
 ---
 
-*This document is a placeholder. Tier definitions will be formalised before any paid features are introduced.*
+## Planned licensing
+
+Pending final review, the planned split is:
+
+- **CC BY 4.0** for template and content material
+- **Apache 2.0** for software
+
+Until those licenses are formally published, all rights remain reserved by the repository owner.

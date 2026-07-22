@@ -2,7 +2,9 @@
 
 ## Why This Project Exists
 
-Modern knowledge work generates information faster than any single person can process it. Voice memos, meeting transcripts, email threads, Slack messages, spontaneous ideas, overheard comments, and half-remembered conversations all carry potential obligations, insights, or decisions that need to go somewhere.
+Modern knowledge work generates information faster than any single person can process it. Raw audio, files,
+meeting transcripts, email threads, spontaneous ideas, and half-remembered conversations all carry potential
+obligations, insights, or decisions that need to go somewhere.
 
 The problem is not a lack of tools. The problem is that most tools require you to be organised before you can use them. They reward consistency, punish interruption, and assume that your mental state when you capture something will be the same as when you need to act on it. It is not.
 
@@ -26,7 +28,10 @@ These three activities happen at different times, in different mental states, an
 
 ## The Deeper Motivation
 
-There is a category of person who carries an unusually large cognitive load: someone at the centre of multiple projects, relationships, and obligations across both Personal and Work contexts. They are not necessarily a manager or executive in a formal sense—they are simply someone for whom the volume and variety of incoming information exceeds what any single conventional system handles well.
+There is a category of person who carries an unusually large cognitive load: someone at the centre of multiple
+projects, relationships, and obligations across both Personal and Work profiles. They are not necessarily a
+manager or executive in a formal sense—they are simply someone for whom the volume and variety of incoming
+information exceeds what any single conventional system handles well.
 
 This project is built for that person. The goal is not just a productivity tool but a reduction in the ambient cognitive burden that comes from not trusting your own system.
 
@@ -36,7 +41,9 @@ A system you trust changes how you think. You stop holding things in your head a
 
 ## What This Is Not
 
-This system is not a mental health tool. It is not designed to treat, diagnose, or address any condition. It is a productivity and information management system.
+This system is not a mental health tool. It makes no diagnostic, treatment, or therapeutic claims. It is a
+productivity and information management system, though evidence-based behavioural research may inform design
+choices.
 
 It is not a team tool, though it may inform how you communicate with teams.
 

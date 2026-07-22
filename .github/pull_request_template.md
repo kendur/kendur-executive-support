@@ -26,8 +26,8 @@ Closes #
 
 - [ ] I have read [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [ ] The changes are consistent with the project's principles (see [docs/architecture-principles.md](../docs/architecture-principles.md))
-- [ ] No employer names (SIA or other) are used — only "Personal" and "Work"
-- [ ] No clinical or medical claims are made
+- [ ] Personal and Work are used as the default public profile names
+- [ ] No diagnostic, treatment, or therapeutic claims are made
 - [ ] No credentials, API keys, or personal data are included
 - [ ] Documentation is updated where relevant
 

@@ -1,100 +1,80 @@
 # Architecture Principles
 
-These principles guide structural and design decisions for the Executive Support System. They are intended to be stable even as implementations change.
+These principles remain stable while implementations change.
 
----
+## 1. Notion is the primary interface
 
-## 1. Notion is the primary interface, not the only component
+Notion provides the initial database, view layer, and main interaction surface. Other tools extend it through documented contracts.
 
-Notion serves as the database, view layer, and primary interaction surface. Other tools—automation platforms, AI services, capture devices—are adapters that feed into or extend Notion. If Notion were replaced with another platform, the principles here should still apply.
+## 2. The core workflow is manual and complete
 
-**Implication:** Never design a workflow that requires a non-Notion tool. Design workflows that work in Notion first, then add adapters.
+Capture, clarification, planning, review, recovery, and completion must work without automation or AI. Every enhanced workflow needs a usable manual path.
 
----
+## 3. Capture, clarification, and action are separate states
 
-## 2. The core workflow is manual
+Capture must be fast and incomplete-tolerant. Clarification determines meaning and next action. Action presents enough context to begin or resume.
 
-The system must function without automation or AI. Every automated step must have a documented manual equivalent. This ensures the system never breaks because a service is unavailable, changes its pricing, or is discontinued.
+## 4. Context and provenance are first-class data
 
-**Implication:** Automation and AI integrations are documented as optional enhancements, not core requirements.
+Every meaningful record should preserve:
 
----
+- source;
+- origin or related event;
+- raw capture where available;
+- supporting files or links;
+- last completed step;
+- restart cue.
 
-## 3. Capture is separate from triage, which is separate from action
+## 5. Personal and Work are profiles
 
-These three activities happen at different times and in different mental states. The architecture must accommodate them independently.
+**Profile** is the public top-level separation concept. Personal and Work records remain logically separate and may be shown together through a unified view.
 
-- Capture happens fast, with minimal friction, and tolerates incomplete or unstructured input
-- Triage happens deliberately, with enough context to decide what something is
-- Action happens with enough restart information to engage without re-reading everything
-
-**Implication:** The Inbox is the capture zone. Triage moves items out of the Inbox. Actions are never in the Inbox.
-
----
-
-## 4. Context, source provenance, and restart cues are first-class data
-
-Every captured item should record:
-
-- **Source** — how it arrived (voice note, email, meeting, manual entry, etc.)
-- **Provenance** — where it came from (which meeting, which person, which project)
-- **Restart cue** — enough context to re-engage without reading everything (a short summary, a key question, or the last decision made)
-
-**Implication:** The Notion schema must include fields for source, provenance, and restart cues. These are not optional.
-
----
-
-## 5. Personal and Work contexts are separate
-
-Items, projects, and actions are tagged as Personal or Work. The two contexts do not share databases, though they can appear together in a unified view.
-
-**Implication:** Design for two parallel workspaces or clearly separated sections within one workspace. Never mix unlabelled items.
-
----
+Situational context—such as location, device, energy, or available time—is separate from Profile.
 
 ## 6. Flat hierarchy is preferred
 
-Avoid deep nesting of projects, tasks, or pages. One level of project context above an action is usually sufficient. Deep nesting creates navigation debt and orphaned items.
+Use Profile → Project → Action as the normal structure. Checklists, dependencies, and milestones are preferred to deep subtask trees.
 
-**Implication:** Limit nesting to: Context (Personal/Work) → Project → Action. Sub-tasks are acceptable but not sub-sub-tasks.
+## 7. Core workflows require no tutorial
 
----
+A new user should understand where to capture, what needs clarification, what to do now, what is blocked, and how to complete an item from the interface itself.
 
-## 7. Adapters are replaceable
+Advanced documentation may explain customization and integrations. It must not be required for ordinary use.
 
-Any tool used for automation (n8n, Zapier, Make, Tasker) or AI (any LLM or AI service) must be replaceable without redesigning the core system. The interface between the adapter and Notion is the contract; the adapter itself is an implementation detail.
+## 8. Complexity stays behind the interface
 
-**Implication:** Document the expected input and output format for each integration point. Do not hard-code assumptions about a specific provider.
+Relations, formulas, automation, and AI may be technically complex. The user-facing decision at any moment should remain small, explicit, and reversible where practical.
 
----
+## 9. Adapters are replaceable
 
-## 8. Workflows must be intuitive without tutorials
+Capture sources, calendars, automation platforms, storage systems, and AI providers connect through defined inputs and outputs. Provider-specific behavior belongs inside adapters.
 
-A new user should be able to pick up the core capture-triage-action loop from the Notion workspace itself, without reading documentation. Documentation exists to explain the why and the deeper options, not the basic how.
+## 10. Notion-native, backend-portable
 
-**Implication:** Naming, layout, and structure within Notion should be self-explanatory. Avoid clever names or non-obvious conventions.
+Use native Notion capabilities where they provide a reliable experience. Near-term automation may use n8n, Zapier, Make, Tasker, or similar tools. Workflow contracts must allow those services to be replaced later by a first-party backend without redesigning the Notion schema or user experience.
 
----
+## 11. AI is optional and provider-agnostic
 
-## 9. The system should not become a source of additional obligation
+AI capabilities are defined by function—such as summarize, extract actions, suggest a next action, or create a restart cue—rather than by vendor. Users may choose no AI, a hosted provider, a local model, or a future managed service.
 
-If maintaining the system creates as much work as the problems it solves, it has failed. Regular reviews of friction points and workflow burden are part of system maintenance.
+## 12. AI autonomy is graduated
 
-**Implication:** Prefer simpler designs even at the cost of some capability. Complexity that the user never engages with is waste.
+Suggestions are the default. Routine, reversible actions may be automated when the user explicitly enables them. Consequential, destructive, conflicting, or external actions require approval.
 
----
+## 13. The system must recover gracefully
 
-## 10. No lock-in at any layer
+A missed review or neglected backlog must not make the system unusable. Recovery views should prioritize current commitments, stale ambiguity, and intentional dropping rather than demanding complete repair.
 
-- Notion data should be exportable
-- Automation workflows should be documented in a platform-agnostic way before implementation
-- AI integrations should be designed to switch providers without data loss
-- The Notion template should be importable without requiring any paid add-on
+## 14. The system must reduce obligation
 
-**Implication:** Document workflows in plain language before implementing them in any specific tool.
+If maintaining the system creates as much work as it saves, the design has failed. Every property, workflow, notification, and integration must justify its maintenance cost.
 
----
+## 15. No lock-in at any layer
 
-## Decisions
+- Notion data must remain exportable.
+- Workflows are documented before vendor-specific implementation.
+- AI providers can be changed without losing core data.
+- The community template works without a paid add-on.
+- Official tested releases remain distinguishable from forks.
 
-Specific architectural decisions are recorded as Architecture Decision Records (ADRs) in [docs/decisions/](decisions/).
+Specific accepted decisions are recorded in [docs/decisions/](decisions/).

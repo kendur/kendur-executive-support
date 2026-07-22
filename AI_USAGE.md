@@ -1,67 +1,75 @@
 # AI Usage Policy
 
-This document describes how artificial intelligence tools are used in the **Executive Support System** project—both in development of the project itself and in the design of the system being built.
+AI is used both in project development and as an optional product capability.
 
----
+## Development transparency
 
-## AI Use in Project Development
+AI-assisted tools may support research, planning, documentation, code, testing, and review. AI output is treated as a draft. Human maintainers remain accountable for accepted architecture, factual claims, security, licensing, and releases.
 
-AI-assisted development is permitted and used in this project. This includes:
+Contributors should disclose material AI assistance in pull requests.
 
-- Drafting and editing documentation
-- Generating code snippets, templates, and configuration examples
-- Reviewing and suggesting improvements to text or structure
-- Brainstorming approaches to design problems
+## Product principle
 
-**Human responsibility is non-negotiable.** All content accepted into this repository has been reviewed and approved by a human maintainer. AI output is treated as a draft, not a final product. Factual accuracy, appropriateness, and quality are the responsibility of the maintainer who accepts the work.
+The complete core system works without AI. Users may choose:
 
-Contributors who use AI assistance in preparing their contributions should disclose this in their pull request description.
+- no AI;
+- a hosted provider;
+- a local model;
+- different providers for different capabilities;
+- a future managed service.
 
----
+Provider-specific configuration belongs in adapters.
 
-## AI as a System Feature
+## Optional capabilities
 
-The Executive Support System is designed to work fully without AI. The core workflow—capture, triage, action—is manual. AI is an optional enhancement layer.
+AI may assist with:
 
-When AI is used within the system, it operates in the following roles:
+- summarization;
+- action and decision extraction;
+- profile or project suggestions;
+- next-action suggestions;
+- blocker identification;
+- restart cues;
+- review assistance;
+- related-context retrieval;
+- setup and configuration guidance.
 
-| Role | Description |
+Each capability should have a manual path where practical.
+
+## AI Guide Pack
+
+The planned AI Guide Pack is not one enormous prompt. It is a portable set of versioned artifacts:
+
+- a core role and behavior prompt;
+- a concise template reference;
+- progressive onboarding questions;
+- skill-level and preference settings;
+- supported capability prompts;
+- test cases and expected behaviors;
+- a canonical update link.
+
+It should work with Notion AI, ChatGPT, Claude, compatible local models, and future providers where their capabilities allow.
+
+Onboarding must remain progressive. The guide asks only what is needed for the next decision and learns additional preferences through use.
+
+## Graduated autonomy
+
+Default behavior is advisory. When explicitly configured, AI and deterministic automation may perform routine, reversible actions such as applying known fields, creating draft records, or routing a capture by a trusted rule.
+
+Human approval is required for consequential, destructive, conflicting, or external actions, including:
+
+- deleting source records;
+- sending communication;
+- resolving ambiguous profile or project conflicts;
+- changing accepted project direction;
+- changing licensing;
+- committing money or making external commitments.
+
+Every derived record should preserve provenance and review state.
+
+## Development disclosure log
+
+| Date | Tool and use |
 |---|---|
-| Summariser | Condenses transcripts, notes, or captured text into shorter, structured form |
-| Action extractor | Identifies potential next actions from unstructured content |
-| Router | Suggests how to categorise or assign captured items |
-| Restart cue generator | Produces a short context summary to help re-engage with an item after a gap |
-| Review assistant | Supports periodic reviews by surfacing patterns or forgotten items |
-
-None of these roles are required. Each can be performed manually.
-
----
-
-## Provider Agnosticism
-
-No specific AI provider, LLM, or AI service is assumed, required, or endorsed by this project.
-
-The system is designed so that any compatible AI service can be connected as an adapter. Provider-specific integrations are documented as optional adapters, not core components.
-
----
-
-## What AI Will Not Do in This System
-
-- AI will not make decisions on behalf of the user.
-- AI will not modify or delete captured items without explicit user action.
-- AI will not be given access to data that the user has not explicitly shared with it.
-- AI output will always be presented as a suggestion, not a conclusion.
-
----
-
-## Disclosure Log
-
-Significant use of AI tools in producing project documentation or design artefacts will be noted here as the project evolves.
-
-| Date | Description |
-|---|---|
-| *(none yet)* | |
-
----
-
-*This policy may be updated as the project matures and as AI tooling evolves.*
+| 2026-07-22 | GitHub Copilot Coding Agent drafted the initial documentation foundation in PR #1; the maintainer reviewed and accepted it. |
+| 2026-07-22 | ChatGPT supported research, architecture, issue definition, and the follow-up alignment PR. |

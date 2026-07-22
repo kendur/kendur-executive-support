@@ -2,103 +2,88 @@
 
 > A Notion-centered, capture-source-agnostic system for turning thoughts, conversations, meetings, and obligations into clear next actions.
 
----
+## The problem
 
-## The Problem
+Information arrives faster than people can organize it. Most productivity tools ask users to classify, schedule, and structure an item at the moment it appears. That creates friction exactly when memory and attention are most fragile.
 
-Information arrives from everywhere—voice notes, phone calls, meeting transcripts, emails, passing ideas, and half-formed obligations. Most productivity tools ask you to organize before you think. The result: either a perfectly maintained system nobody actually uses, or an overflowing inbox that creates guilt instead of clarity.
+This system takes the opposite approach: **capture first, clarify later, act with context.**
 
-The Executive Support System takes the opposite approach: **capture first, structure later, act always.**
+## Core principles
 
----
+- **Capture incomplete thoughts quickly.** A fragment saved is more useful than a complete idea forgotten.
+- **Preserve context and restart cues.** Users should be able to return without reconstructing the whole task.
+- **Work without AI.** Automation and AI are optional enhancement layers.
+- **Use Personal and Work profiles.** They remain separate and may appear together in a unified view.
+- **Prefer flat, visible structure.** Deep task nesting is avoided.
+- **Require no tutorial for core use.** Capture, clarification, Today planning, and completion must be understandable from the interface itself.
+- **Keep adapters replaceable.** Recorders, automation platforms, calendars, and AI providers connect through documented contracts.
+- **Keep Notion primary.** Notion is the initial interface and operational workspace; external services extend it.
 
-## Philosophy
+## Intended users
 
-- **Capture must be fast and tolerate incomplete thoughts.** A half-formed idea captured is always better than a perfect idea forgotten.
-- **Context is not optional.** Every item preserves its source (how it arrived), provenance (where it came from), and enough of a restart cue to re-engage without re-reading everything.
-- **The core works without AI.** Automation and AI are enhancement layers—useful when available, never required.
-- **Personal and Work live separately.** The two profiles are maintained independently but can surface together in a unified view when needed.
-- **Flat beats nested.** Avoid deep task hierarchies. One level of project context is usually enough.
-- **Intuitive without tutorials.** Workflows a user can understand on first contact are preferred over powerful workflows that require documentation to follow.
-- **Notion is the primary interface.** Everything else—automation tools, capture devices, AI providers—are adapters.
+This system is designed for people who:
 
----
+- receive information from many sources;
+- lose thoughts or context quickly;
+- move between Personal and Work responsibilities;
+- want a trusted system without adopting a rigid methodology;
+- may have little technical experience;
+- want the option to add automation or AI without being required to do so.
 
-## What This Is (and Isn't)
+## Product model
 
-| This system is… | This system is not… |
-|---|---|
-| A thinking and triage layer | A replacement for your calendar or email |
-| A way to surface forgotten commitments | A task tracker with enforced methodology |
-| A bridge between messy capture and clean action | A medical or wellness tool |
-| Designed for one person at the centre of many obligations | A team project management tool |
+The complete manual community system is intended to remain free and openly licensed. Users may duplicate, modify, fork, and redistribute it under the published attribution terms.
 
----
+Future paid offerings may provide hosted automation, managed connectors, optional intelligence, migration help, monitoring, and support. Paid services sell reduced setup and maintenance burden rather than access to the core workflow.
 
-## Intended Users
+See [docs/product-tiers.md](docs/product-tiers.md).
 
-This system is built for people who:
+## AI-optional design
 
-- Move between Personal and Work contexts frequently
-- Receive information across many sources (voice, text, meetings, email)
-- Struggle with "I'll deal with that later" accumulation
-- Want to own their system rather than depend on a single vendor
-- Are comfortable building and adapting tools to their own needs
+AI may summarize, extract possible actions, suggest routing, create restart cues, and help users configure the system. The manual workflow remains complete without it.
 
----
+The planned **AI Guide Pack** is a provider-agnostic set of prompts, reference material, progressive onboarding questions, and tests that can help a user set up and operate the template at their current skill level. See [docs/ai-guide-pack.md](docs/ai-guide-pack.md).
 
-## Current Status
+## Relationship to Nexus
 
-This repository is in the **documentation and architecture phase**. No production application code exists yet. The documents here define the problem, the principles, and the intended structure.
+This project is the first bounded, testable, and potentially monetizable module on the path toward **Nexus**, a broader personal operating-system concept. It must succeed as a standalone product while preserving clear integration points for later Nexus modules.
 
-See [ROADMAP.md](ROADMAP.md) for what comes next.
+## Current status
 
----
+The repository is in the documentation, research, and architecture phase. The next major deliverable is a manual Notion prototype tested through real daily use.
 
-## AI-Optional Design
+See [ROADMAP.md](ROADMAP.md).
 
-AI can summarise transcripts, suggest next actions, and route captured items—but none of those things are required for the system to function. The manual workflow comes first. AI and automation are layered on top.
+## Repository structure
 
-No specific AI provider, LLM, or service is assumed or required. See [AI_USAGE.md](AI_USAGE.md) for details on how AI is used in this project (including in development).
-
----
-
-## The Nexus Vision
-
-This project is one layer of a larger personal operating system called **Nexus** (also a working title). Nexus aims to unify how a person captures, reflects on, and acts on information across every area of their life. The Executive Support System is the action-and-obligation layer of that vision.
-
----
-
-## Repository Structure
-
-```
-/
-├── README.md                        ← you are here
-├── ROADMAP.md                       ← what comes next
-├── CONTRIBUTING.md                  ← how to contribute
-├── AI_USAGE.md                      ← AI policy and disclosure
-├── SECURITY.md                      ← security policy
-├── CHANGELOG.md                     ← version history
-└── docs/
-    ├── vision.md                    ← why this project exists
-    ├── project-charter.md           ← scope, goals, constraints
-    ├── architecture-principles.md   ← structural decisions
-    ├── capture-ingestion.md         ← how information enters the system
-    ├── product-tiers.md             ← community vs. paid tiers
-    ├── research/                    ← background research and references
-    └── decisions/                   ← Architecture Decision Records (ADRs)
+```text
+README.md
+ROADMAP.md
+AI_USAGE.md
+SECURITY.md
+CHANGELOG.md
+docs/
+  vision.md
+  project-charter.md
+  architecture-principles.md
+  capture-ingestion.md
+  ai-guide-pack.md
+  product-tiers.md
+  history/
+  research/
+  decisions/
 ```
 
----
+## Public development
 
-## Public Development
+The project is developed in public. AI-assisted development is permitted and disclosed; human maintainers remain accountable for accepted work.
 
-This project is developed in public. Issues, discussions, and pull requests are welcome. Contributions are governed by [CONTRIBUTING.md](CONTRIBUTING.md).
+## Licensing status
 
-AI-assisted development is permitted and used. Human maintainers are responsible for all accepted work. See [AI_USAGE.md](AI_USAGE.md).
+No license files have been added yet. The planned split, pending final review, is:
 
----
+- **CC BY 4.0** for the Notion template, prompts, documentation, diagrams, and research;
+- **Apache License 2.0** for code, connectors, scripts, and backend services;
+- a separate branding policy to distinguish official tested releases from community forks.
 
-## License
-
-No license has been assigned yet. The project will use separate licenses for code and content. Until a license is published, all rights are reserved by the repository owner.
+Until those files are published, all rights remain reserved.
